@@ -2,12 +2,8 @@ import pandas as pd
 import csv
 
 df = pd.read_csv("dwarf_stars.csv")
-# print(df.head())
-# print(df.columns)
-# print(df.dtypes)
 
 df = df.dropna()
-# print(df.dtypes)
 
 df['Radius'] = 0.102763 * df['Radius']
 df['Mass'] = df['Mass'].apply(lambda x:x.replace('$','').replace(',','')).astype('float')
